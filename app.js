@@ -1,4 +1,4 @@
-const { argv } = require("./helpers/commandLineConf");
+const argv = require("./config/yargs");
 const { crearArchivo } = require("./helpers/multiplicar");
 
 console.clear();
