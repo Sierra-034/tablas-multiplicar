@@ -12,8 +12,15 @@ const { argv } = yargs
         default: false,
         describe: 'Muestra la tabla en consola',
     })
+    .option('h', {
+        alias: 'hasta',
+        type: 'number',
+        default: 10,
+        description: 'Hasta qué número se debe generar la tabla',
+    })
     .check((argv, option) => {
         if (isNaN(argv.b)) throw 'La base tiene que ser numérica';
+        if (isNaN(argv.h)) throw 'El argumento h debe ser numérico';
         return true;
     });
 
